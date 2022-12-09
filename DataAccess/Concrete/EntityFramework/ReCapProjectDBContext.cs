@@ -1,5 +1,6 @@
 ﻿using Core.Entities.Concrete;
 using Core.Entity.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,13 @@ namespace DataAccess.Concrete.EntityFramework
         {
             optionsBuilder.UseSqlServer(@"Server=DOĞUKAN\SQL2;Database=ReCapProjectDB;Trusted_Connection=true");
         }
-        
+
+        public DbSet<Meeting> Meetings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        
+
 
     }
 }
