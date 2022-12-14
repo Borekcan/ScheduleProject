@@ -13,14 +13,15 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DOĞUKAN\SQL2;Database=ReCapProjectDB;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=DOĞUKAN\SQL2;Database=ScheduleProject;Trusted_Connection=true");
         }
 
-        public DbSet<Meeting> Meetings { get; set; }
+       
         public DbSet<User> Users { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
-        
+        public DbSet<Meeting> Meetings { get; set; }
+
 
 
     }
