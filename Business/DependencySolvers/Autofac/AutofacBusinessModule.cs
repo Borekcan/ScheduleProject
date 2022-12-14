@@ -23,6 +23,10 @@ namespace Business.DependencySolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
 
+            builder.RegisterType<MeetingManager>().As<IMeetingService>().SingleInstance();
+            builder.RegisterType<EfMeetingDal>().As<IMeetingDal>().SingleInstance();
+            
+
 
             builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();

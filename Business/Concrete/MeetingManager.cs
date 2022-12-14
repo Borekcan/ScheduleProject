@@ -9,10 +9,11 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Business.Abstract;
 
 namespace Business.Concrete
 {
-    public class MeetingManager
+    public class MeetingManager :IMeetingService
     {
 
         IMeetingDal _meetingDal;

@@ -10,7 +10,7 @@ namespace Entities.Concrete
     {
 
         public int MeetingId { get; set; }
-        public DateTime MeetingTime { get; set; }
+        public string MeetingTime { get; set; }
         public string HostUser { get; set; }
         public string MeetingPlace { get; set; }
 
