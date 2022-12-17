@@ -12,35 +12,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MeetingController :ControllerBase
+    public class VoteController : ControllerBase
     {
+        IVoteService _voteService;
 
-        IMeetingService _meetingService;
-
-        public MeetingController(IMeetingService meetingService)
+        public VoteController(IVoteService voteService)
         {
-            _meetingService = meetingService;
+            _voteService = voteService;
         }
 
-        [HttpPost("meeting-create")]
-        public ActionResult MeetingCreate(Meeting meeting)
+        [HttpPost("vote-create")]
+        public ActionResult VoteCreate(Vote vote)
         {
-            var result = _meetingService.Add(meeting);
-            if (result.Success)
-            {
-                return Ok(result);
-             
-            }
-            else
-            {
-                return BadRequest(result);
-            }
-        }
-        
-        [HttpPost("meeting-delete")]
-        public ActionResult MeetingDelete(Meeting meeting)
-        {
-            var result = _meetingService.Delete(meeting);
+            var result = _voteService.Add(vote);
             if (result.Success)
             {
                 return Ok(result);
@@ -52,10 +36,10 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost("meeting-update")]
-        public ActionResult MeetingUpdate(Meeting meeting)
+        [HttpPost("vote-delete")]
+        public ActionResult VoteDelete(Vote vote)
         {
-            var result = _meetingService.Delete(meeting);
+            var result = _voteService.Delete(vote);
             if (result.Success)
             {
                 return Ok(result);
@@ -67,10 +51,10 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost("meeting-getbyid")]
-        public ActionResult MeetingGetByID(int id)
+        [HttpPost("vote-update")]
+        public ActionResult VoteUpdate(Vote vote)
         {
-            var result = _meetingService.GetByID(id);
+            var result = _voteService.Delete(vote);
             if (result.Success)
             {
                 return Ok(result);
@@ -81,11 +65,41 @@ namespace WebAPI.Controllers
                 return BadRequest(result);
             }
         }
-        
-        [HttpPost("meeting-getbyhostuser")]
-        public ActionResult MeetingGetByHostUser(string name)
+
+        [HttpPost("vote-getbyid")]
+        public ActionResult VoteGetByID(int id)
         {
-            var result = _meetingService.GetByHostUser(name);
+            var result = _voteService.GetByID(id);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("vote-OK")]
+        public ActionResult VoteOK(Vote vote)
+        {
+            var result = _voteService.VoteOK(vote);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("vote-deny")]
+        public ActionResult VoteDeny(Vote vote)
+        {
+            var result = _voteService.VoteDeny(vote);
             if (result.Success)
             {
                 return Ok(result);
