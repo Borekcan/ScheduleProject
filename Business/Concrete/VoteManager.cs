@@ -55,7 +55,8 @@ namespace Business.Concrete
         public IResult VoteOK(Vote vote)
         {
             var voteOK = _voteDal.Get(u => u.VoteId == vote.VoteId);
-            voteOK.OK++;
+            voteOK.OK = vote.OK++;
+            voteOK.Deny = vote.Deny;
             _voteDal.Update(voteOK);
             return new SuccessResult(Messages.SuccessMessage);
         }
@@ -63,7 +64,8 @@ namespace Business.Concrete
         public IResult VoteDeny(Vote vote)
         {
             var voteDeny = _voteDal.Get(u => u.VoteId == vote.VoteId);
-            voteDeny.Deny++;    
+            voteDeny.Deny = vote.Deny++;
+            voteDeny.OK = vote.OK;
             _voteDal.Update(voteDeny);
             return new SuccessResult(Messages.SuccessMessage);
         }
