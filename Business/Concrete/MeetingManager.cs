@@ -31,7 +31,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SuccessMessage);
         }
 
-        public IResult Update(Meeting meeting)
+       /* public IResult Update(Meeting meeting)
         {
             var meetingUpdate = _meetingDal.Get(u => u.MeetingId == meeting.MeetingId);
             meetingUpdate.MeetingTime = meeting.MeetingTime;
@@ -39,7 +39,7 @@ namespace Business.Concrete
             meetingUpdate.MeetingPlace = meeting.MeetingPlace;
             _meetingDal.Update(meetingUpdate);
             return new SuccessResult(Messages.SuccessMessage);
-        }
+        }*/
 
         public IResult Delete(Meeting meeting)
         {
