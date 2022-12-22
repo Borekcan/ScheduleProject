@@ -10,9 +10,23 @@ namespace Entities.Concrete
     {
         public string MeetingName { get; set; }
         public int MeetingId { get; set; }
-        public string MeetingTime { get; set; }
+        public string MeetingName { get; set; }
         public string HostUser { get; set; }
-        public string MeetingPlace { get; set; }
+
+        public string FirstVoteTime { get; set; }
+        public string FirstVotePlace { get; set; }
+
+        public string SecondVoteTime { get; set; }
+        public string SecondVotePlace { get; set; }
+
+        public string ThirdVoteTime { get; set; }
+        public string ThirdVotePlace { get; set; }
+
+        public string FourthVoteTime { get; set; }
+        public string FourthVotePlace { get; set; }
+
+        public string FifthVoteTime { get; set; }
+        public string FifthVotePlace { get; set; }
 
     }
 }
