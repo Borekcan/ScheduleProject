@@ -12,6 +12,20 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfMeetingDal : IEfEntityRepositoryBase<Meeting, ReCapProjectDBContext>, IMeetingDal
     {
+
+        public List<MeetingForGetDto> GetMeetingDTO(Expression<Func<MeetingForGetDto, bool>> filter = null)
+        {
+            using (ReCapProjectDBContext context = new ReCapProjectDBContext())
+            {
+                var resultList = from meeting in context.Meetings
+
+                                 select new MeetingForGetDto { MeetingName = meeting.MeetingName , HostUser = meeting.HostUser};
+
+                return filter == null ? resultList.ToList() : resultList.Where(filter).ToList();
+
+
+            }
+        }
     }
 }
 

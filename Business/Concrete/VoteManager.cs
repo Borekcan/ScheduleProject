@@ -22,19 +22,18 @@ namespace Business.Concrete
 
         public IResult Add(Vote vote)
         {
-
             _voteDal.Add(vote);
             return new SuccessResult(Messages.SuccessMessage);
         }
 
-        public IResult Update(Vote vote)
+        /*public IResult Update(Vote vote)
         {
             var voteUpdate = _voteDal.Get(u => u.VoteId == vote.VoteId);
             voteUpdate.OK = vote.OK;
             voteUpdate.Deny = vote.Deny;
             _voteDal.Update(voteUpdate);
             return new SuccessResult(Messages.SuccessMessage);
-        }
+        }*/
 
         public IResult Delete(Vote vote)
         {
@@ -52,7 +51,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Vote>(_voteDal.Get(m => m.VoteId == voteId), Messages.SuccessDataMessage);
         }
 
-        public IResult VoteOK(Vote vote)
+        /*public IResult VoteOK(Vote vote)
         {
             var voteOK = _voteDal.Get(u => u.VoteId == vote.VoteId);
             voteOK.OK = vote.OK++;
@@ -68,6 +67,6 @@ namespace Business.Concrete
             voteDeny.OK = vote.OK;
             _voteDal.Update(voteDeny);
             return new SuccessResult(Messages.SuccessMessage);
-        }
+        }*/
     }
 }

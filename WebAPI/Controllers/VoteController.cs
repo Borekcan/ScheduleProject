@@ -51,10 +51,10 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost("vote-update")]
+       /* [HttpPost("vote-update")]
         public ActionResult VoteUpdate(Vote vote)
         {
-            var result = _voteService.Delete(vote);
+            var result = _voteService.Update(vote);
             if (result.Success)
             {
                 return Ok(result);
@@ -64,7 +64,7 @@ namespace WebAPI.Controllers
             {
                 return BadRequest(result);
             }
-        }
+        }*/
 
         [HttpPost("vote-getbyid")]
         public ActionResult VoteGetByID(int id)
@@ -81,34 +81,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost("vote-OK")]
-        public ActionResult VoteOK(Vote vote)
-        {
-            var result = _voteService.VoteOK(vote);
-            if (result.Success)
-            {
-                return Ok(result);
 
-            }
-            else
-            {
-                return BadRequest(result);
-            }
-        }
-
-        [HttpPost("vote-deny")]
-        public ActionResult VoteDeny(Vote vote)
-        {
-            var result = _voteService.VoteDeny(vote);
-            if (result.Success)
-            {
-                return Ok(result);
-
-            }
-            else
-            {
-                return BadRequest(result);
-            }
-        }
     }
 }

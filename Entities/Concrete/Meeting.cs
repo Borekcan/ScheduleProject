@@ -8,7 +8,7 @@ namespace Entities.Concrete
 
     public class Meeting : IEntity
     {
-
+        public string MeetingName { get; set; }
         public int MeetingId { get; set; }
         public string MeetingTime { get; set; }
         public string HostUser { get; set; }
