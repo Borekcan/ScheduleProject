@@ -26,14 +26,17 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SuccessMessage);
         }
 
-        /*public IResult Update(Vote vote)
+        public IResult Update(Vote vote)
         {
             var voteUpdate = _voteDal.Get(u => u.VoteId == vote.VoteId);
-            voteUpdate.OK = vote.OK;
-            voteUpdate.Deny = vote.Deny;
+            vote.VoteOneCount = voteUpdate.VoteOneCount;
+            vote.VoteTwoCount = voteUpdate.VoteTwoCount;
+            vote.VoteThreeCount = voteUpdate.VoteThreeCount;
+            vote.VoteFourCount = voteUpdate.VoteFourCount;
+            vote.VoteFiveCount = voteUpdate.VoteFiveCount;
             _voteDal.Update(voteUpdate);
             return new SuccessResult(Messages.SuccessMessage);
-        }*/
+        }
 
         public IResult Delete(Vote vote)
         {
@@ -51,22 +54,40 @@ namespace Business.Concrete
             return new SuccessDataResult<Vote>(_voteDal.Get(m => m.VoteId == voteId), Messages.SuccessDataMessage);
         }
 
-        /*public IResult VoteOK(Vote vote)
+        public IResult VoteOne(Vote vote)
         {
-            var voteOK = _voteDal.Get(u => u.VoteId == vote.VoteId);
-            voteOK.OK = vote.OK++;
-            voteOK.Deny = vote.Deny;
-            _voteDal.Update(voteOK);
+            var voteOne = _voteDal.Get(u => u.VoteId == vote.VoteId);
+            voteOne.VoteOneCount++;
+            _voteDal.Update(voteOne);
             return new SuccessResult(Messages.SuccessMessage);
         }
-
-        public IResult VoteDeny(Vote vote)
+        public IResult VoteTwo(Vote vote)
         {
-            var voteDeny = _voteDal.Get(u => u.VoteId == vote.VoteId);
-            voteDeny.Deny = vote.Deny++;
-            voteDeny.OK = vote.OK;
-            _voteDal.Update(voteDeny);
+            var voteTwo = _voteDal.Get(u => u.VoteId == vote.VoteId);
+            voteTwo.VoteTwoCount++;
+            _voteDal.Update(voteTwo);
             return new SuccessResult(Messages.SuccessMessage);
-        }*/
+        }
+        public IResult VoteThree(Vote vote)
+        {
+            var voteThree = _voteDal.Get(u => u.VoteId == vote.VoteId);
+            voteThree.VoteThreeCount++;
+            _voteDal.Update(voteThree);
+            return new SuccessResult(Messages.SuccessMessage);
+        }
+        public IResult VoteFour(Vote vote)
+        {
+            var voteFour = _voteDal.Get(u => u.VoteId == vote.VoteId);
+            voteFour.VoteFourCount++;
+            _voteDal.Update(voteFour);
+            return new SuccessResult(Messages.SuccessMessage);
+        }
+        public IResult VoteFive(Vote vote)
+        {
+            var voteFive = _voteDal.Get(u => u.VoteId == vote.VoteId);
+            voteFive.VoteFiveCount++;
+            _voteDal.Update(voteFive);
+            return new SuccessResult(Messages.SuccessMessage);
+        }
     }
 }

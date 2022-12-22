@@ -81,6 +81,79 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpPost("vote-one")]
+        public ActionResult VoteOne(Vote vote)
+        {
+            var result = _voteService.VoteOne(vote);
+            if (result.Success)
+            {
+                return Ok(result);
 
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpPost("vote-two")]
+        public ActionResult VoteTwo(Vote vote)
+        {
+            var result = _voteService.VoteTwo(vote);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpPost("vote-three")]
+        public ActionResult VoteThree(Vote vote)
+        {
+            var result = _voteService.VoteThree(vote);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpPost("vote-four")]
+        public ActionResult VoteFour(Vote vote)
+        {
+            var result = _voteService.VoteFour(vote);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpPost("vote-five")]
+        public ActionResult VoteFive(Vote vote)
+        {
+            var result = _voteService.VoteFive(vote);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }
