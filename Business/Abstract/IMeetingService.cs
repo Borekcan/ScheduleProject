@@ -13,10 +13,12 @@ namespace Business.Abstract
     {
 
         IResult Add(Meeting meeting);
-        IResult Update(Meeting meeting);
+        //IResult Update(Meeting meeting);
         IResult Delete(Meeting meeting);
         IDataResult <List<Meeting>> GetAll();
         IDataResult <Meeting> GetByID(int meetingID);
         IDataResult <Meeting> GetByHostUser(string hostUser);
+        IDataResult<List<MeetingForGetDto>> GetMeetingDTO(string hostUser);
+
     }
 }

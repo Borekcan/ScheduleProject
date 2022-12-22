@@ -11,6 +11,6 @@ namespace DataAccess.Abstract
 {
     public interface IMeetingDal : IEntityRepository<Meeting>
     {
-
+        List<MeetingForGetDto> GetMeetingDTO(Expression<Func<MeetingForGetDto, bool>> filter = null);
     }
 }
