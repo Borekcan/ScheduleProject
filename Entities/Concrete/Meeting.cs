@@ -13,20 +13,12 @@ namespace Entities.Concrete
         public string MeetingName { get; set; }
         public string HostUser { get; set; }
 
-        public string FirstVoteTime { get; set; }
-        public string FirstVotePlace { get; set; }
-
-        public string SecondVoteTime { get; set; }
-        public string SecondVotePlace { get; set; }
-
-        public string ThirdVoteTime { get; set; }
-        public string ThirdVotePlace { get; set; }
-
-        public string FourthVoteTime { get; set; }
-        public string FourthVotePlace { get; set; }
-
-        public string FifthVoteTime { get; set; }
-        public string FifthVotePlace { get; set; }
+        public DateTime FirstVote { get; set; }
+        public DateTime SecondVote { get; set; }
+        public DateTime ThirdVote { get; set; }
+        public DateTime FourthVote { get; set; }
+        public DateTime FifthVote { get; set; }
+        public string MeetingDescription { get; set; }
 
     }
 }
