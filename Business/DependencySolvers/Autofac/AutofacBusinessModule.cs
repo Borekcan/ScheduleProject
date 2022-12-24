@@ -25,8 +25,9 @@ namespace Business.DependencySolvers.Autofac
 
             builder.RegisterType<MeetingManager>().As<IMeetingService>().SingleInstance();
             builder.RegisterType<EfMeetingDal>().As<IMeetingDal>().SingleInstance();
-            
 
+            builder.RegisterType<VoteManager>().As<IVoteService>().SingleInstance();
+            builder.RegisterType<EfVoteDal>().As<IVoteDal>().SingleInstance();
 
             builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();

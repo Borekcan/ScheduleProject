@@ -10,10 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using DataAccess.Concrete.EntityFramework;
 
 namespace Business.Concrete
 {
-    public class MeetingManager :IMeetingService
+    public class MeetingManager : IMeetingService
     {
 
         IMeetingDal _meetingDal;
@@ -31,7 +32,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SuccessMessage);
         }
 
-       /* public IResult Update(Meeting meeting)
+        /*public IResult Update(Meeting meeting)
         {
             var meetingUpdate = _meetingDal.Get(u => u.MeetingId == meeting.MeetingId);
             meetingUpdate.MeetingTime = meeting.MeetingTime;
@@ -62,8 +63,11 @@ namespace Business.Concrete
             return new SuccessDataResult<Meeting>(_meetingDal.Get(h => h.HostUser == hostUser), Messages.SuccessDataMessage);
         }
 
-        
-        
+        public IDataResult<List<MeetingForGetDto>> GetMeetingDTO(string hostUser)
+        {
+            return new SuccessDataResult<List<MeetingForGetDto>>(_meetingDal.GetMeetingDTO(m => m.HostUser == hostUser), Messages.SuccessDataMessage);
+        }
+
     }
 }
 

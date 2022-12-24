@@ -36,5 +36,65 @@ namespace WebAPI.Controllers
                 return BadRequest(result);
             }
         }
+        
+        [HttpPost("meeting-delete")]
+        public ActionResult MeetingDelete(Meeting meeting)
+        {
+            var result = _meetingService.Delete(meeting);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("meeting-update")]
+        public ActionResult MeetingUpdate(Meeting meeting)
+        {
+            var result = _meetingService.Delete(meeting);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("meeting-getbyid")]
+        public ActionResult MeetingGetByID(int id)
+        {
+            var result = _meetingService.GetByID(id);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpPost("meeting-getbyhostuser")]
+        public ActionResult MeetingGetByHostUser(string name)
+        {
+            var result = _meetingService.GetByHostUser(name);
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }

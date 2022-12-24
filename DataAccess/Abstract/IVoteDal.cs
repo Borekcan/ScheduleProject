@@ -9,8 +9,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IMeetingDal : IEntityRepository<Meeting>
+    public interface IVoteDal : IEntityRepository<Vote>
     {
-        List<MeetingForGetDto> GetMeetingDTO(Expression<Func<MeetingForGetDto, bool>> filter = null);
+
     }
 }
