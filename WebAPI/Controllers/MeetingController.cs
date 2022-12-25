@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost("meeting-getbyid")]
+        [HttpGet("meeting-getbyid")]
         public ActionResult MeetingGetByID(int id)
         {
             var result = _meetingService.GetByID(id);
@@ -82,7 +82,7 @@ namespace WebAPI.Controllers
             }
         }
         
-        [HttpPost("meeting-getbyhostuser")]
+        [HttpGet("meeting-getbyhostuser")]
         public ActionResult MeetingGetByHostUser(string name)
         {
             var result = _meetingService.GetByHostUser(name);
