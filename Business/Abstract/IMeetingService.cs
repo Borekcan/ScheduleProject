@@ -18,7 +18,7 @@ namespace Business.Abstract
         IDataResult <List<Meeting>> GetAll();
         IDataResult <Meeting> GetByID(int meetingID);
         IDataResult <Meeting> GetByHostUser(string hostUser);
-        IDataResult<List<MeetingForGetDto>> GetMeetingDTO(string hostUser);
+        IDataResult<List<MeetingForGetDto>> GetAllMeetingDTO();
 
     }
 }

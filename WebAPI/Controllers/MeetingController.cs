@@ -96,5 +96,19 @@ namespace WebAPI.Controllers
                 return BadRequest(result);
             }
         }
+        [HttpGet("meeting-getalldto")]
+        public ActionResult GetMeetingDto()
+        {
+            var result = _meetingService.GetAllMeetingDTO();
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }

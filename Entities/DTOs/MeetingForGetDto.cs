@@ -7,6 +7,7 @@ namespace Entities.DTOs
 {
     public class MeetingForGetDto : IDto
     {
+        public int MeetingId { get; set; }
         public string MeetingName { get; set; }
         public string HostUser { get; set; }
 

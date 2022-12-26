@@ -63,9 +63,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Meeting>(_meetingDal.Get(h => h.HostUser == hostUser), Messages.SuccessDataMessage);
         }
 
-        public IDataResult<List<MeetingForGetDto>> GetMeetingDTO(string hostUser)
+        public IDataResult<List<MeetingForGetDto>> GetAllMeetingDTO()
         {
-            return new SuccessDataResult<List<MeetingForGetDto>>(_meetingDal.GetMeetingDTO(m => m.HostUser == hostUser), Messages.SuccessDataMessage);
+            return new SuccessDataResult<List<MeetingForGetDto>>(_meetingDal.GetMeetingDTO(), Messages.SuccessDataMessage);
         }
 
     }

@@ -19,7 +19,10 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var resultList = from meeting in context.Meetings
 
-                                 select new MeetingForGetDto { MeetingName = meeting.MeetingName , HostUser = meeting.HostUser};
+                                 select new MeetingForGetDto { 
+                                     MeetingName = meeting.MeetingName ,
+                                     MeetingId = meeting.MeetingId ,
+                                     HostUser = meeting.HostUser};
 
                 return filter == null ? resultList.ToList() : resultList.Where(filter).ToList();
 
