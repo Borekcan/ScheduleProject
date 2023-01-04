@@ -9,7 +9,6 @@ namespace Entities.Concrete
     {
 
         public int VoteId { get; set; }
-        public int MeetingId { get; set; }
 
         public int VoteOneCount { get; set; }
         
